@@ -14,7 +14,7 @@ export default function Overview() {
                     </div>
                     <div className="overview-image-wrapper">
                         <img
-                            src="/screenshot-of-explore-screen.png"
+                            src={`${import.meta.env.BASE_URL}screenshot-of-explore-screen.png`}
                             alt="App Dashboard Screenshot"
                             className="overview-image"
                         />
