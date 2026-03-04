@@ -3,7 +3,7 @@ export default function Hero() {
         <section className="section hero">
             <div className="container hero-content">
                 <img
-                    src={`${import.meta.env.BASE_URL}/logo-transparent.png}`}
+                    src={`${import.meta.env.BASE_URL}logo-transparent.png}`}
                     alt="Apex Scholar Logo"
                     className="hero-logo"
                 />
