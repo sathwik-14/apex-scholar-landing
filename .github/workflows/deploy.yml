@@ -4,7 +4,6 @@ on:
   push:
     branches: [main]
 
-# Required to allow the action to push to the gh-pages branch
 permissions:
   contents: write
 
@@ -15,8 +14,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20 # Recommended for latest Vite versions
-          cache: 'npm'   # Speeds up future builds
+          node-version: 20
+          cache: 'npm'
       
       - run: npm install
       - run: npm run build
