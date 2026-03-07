@@ -1,4 +1,4 @@
-import { ArrowRight, BookMarked, BrainCircuit, Users } from 'lucide-react';
+import { ArrowRight, BookMarked, BrainCircuit, Users, Shield } from 'lucide-react';
 
 const roadmapCategories = [
     {
@@ -7,7 +7,8 @@ const roadmapCategories = [
         features: [
             "Reference Syncing: Native integrations with Zotero, Mendeley, and EndNote.",
             "PDF Workspace: Upload papers, highlight text, and link annotations.",
-            "Scopus Integration: Expand unified paper explorer sources."
+            "Scopus Integration: Expand unified paper explorer sources.",
+            "Unified Search: Query ArXiv, Semantic Scholar, OpenAlex, Google Scholar, PubMed at once."
         ]
     },
     {
@@ -16,15 +17,29 @@ const roadmapCategories = [
         features: [
             "Document Q&A (RAG): Chat with PDFs to summarize methodologies.",
             "Auto-Extraction: AI-assisted extraction of tables and statistics.",
-            "Smart Recommendations: Context-aware literature discovery."
+            "Smart Recommendations: Context-aware literature discovery.",
+            "AI Knowledge Graphs: Visualize research gaps and connections."
         ]
     },
     {
         icon: <Users size={20} />,
-        title: "Collaboration & Open Science",
+        title: "Collaboration & Editor",
         features: [
-            "Role-Based Access Control (RBAC): Profiles for PIs, Post-Docs, and Assistants.",
-            "Data Publishing: 1-click publishing for robust supplementary materials."
+            "Real-time Collaborative Editor (Overleaf-style) with LaTeX support",
+            "Reference insertion from your library (APA, MLA, Chicago)",
+            "Export to PDF, Word, and LaTeX (.tex)",
+            "Version history, rollback, and commenting",
+            "AI writing assistant: sentence completions, grammar, research-aware suggestions"
+        ]
+    },
+    {
+        icon: <Shield size={20} />,
+        title: "Security & Privacy",
+        features: [
+            "End-to-end encryption (E2EE) for all cloud-synced data",
+            "Zero-knowledge architecture: server never sees your keys",
+            "Client-side AES-256-GCM encryption before storage",
+            "Encrypted backups and cross-device key sync"
         ]
     }
 ];
