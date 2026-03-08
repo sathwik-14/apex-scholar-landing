@@ -22,7 +22,8 @@ export default function Footer() {
                             <a href="#roadmap">Roadmap</a>
                         </div>
                         <div className="link-col">
-                            <h4>Support</h4>
+                            <h4>Resources</h4>
+                            <a href="https://apexscholar-docs.pages.dev" target="_blank" rel="noopener noreferrer">Documentation</a>
                             <a href="https://buymeacoffee.com/kywagle" target="_blank" rel="noopener noreferrer">Buy Me A Coffee</a>
                             <a href="https://github.com/sathwik-14/apex-scholar.git" target="_blank" rel="noopener noreferrer">Contribute</a>
                         </div>

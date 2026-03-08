@@ -3,6 +3,7 @@ import Hero from './components/Hero';
 import Features from './components/Features';
 import Overview from './components/Overview';
 import Roadmap from './components/Roadmap';
+import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <Overview />
       <Features />
       <Roadmap />
+      <FAQ />
       <Footer />
     </div>
   );
