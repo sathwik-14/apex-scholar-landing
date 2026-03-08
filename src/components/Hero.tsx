@@ -11,6 +11,9 @@ export default function Hero() {
                 <p className="hero-subtitle">
                     A unified, AI-powered workspace for academic researchers to explore literature, manage grants, and track knowledge.
                 </p>
+                <p className="hero-security-badge">
+                    🔒 E2EE Cloud Sync — Your research stays private.
+                </p>
                 <div className="hero-actions">
                     <a href="https://apex-scholar.vercel.app" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
                         Live Demo
