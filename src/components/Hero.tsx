@@ -15,7 +15,7 @@ export default function Hero() {
                     🔒 E2EE Cloud Sync — Your research stays private.
                 </p>
                 <div className="hero-actions">
-                    <a href="https://apex-scholar.vercel.app" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                    <a href="https://apexscholar.vercel.app" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
                         Live Demo
                     </a>
                     <a href="https://apexscholar-docs.pages.dev" className="btn btn-secondary" target="_blank" rel="noopener noreferrer">

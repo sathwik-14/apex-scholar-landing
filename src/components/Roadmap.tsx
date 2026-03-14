@@ -1,6 +1,16 @@
-import { ArrowRight, BookMarked, BrainCircuit, Users } from 'lucide-react';
+import { ArrowRight, BookMarked, BrainCircuit, Users, Check, Wrench } from 'lucide-react';
 
 const roadmapCategories = [
+    {
+        icon: <Check size={20} />,
+        title: "Recently Completed",
+        features: [
+            "✅ Zotero integration: Connect and import references from your Zotero library.",
+            "✅ Mobile responsive: Full mobile experience (Composr module has room for improvement).",
+            "✅ LaTeX workflow: End-to-end working via GitHub Actions.",
+            "✅ Wrapper libraries: ai.ts, kv.ts, storage.ts, auth.ts for future service integrations."
+        ]
+    },
     {
         icon: <BookMarked size={20} />,
         title: "Literature & Citation Management",
@@ -30,6 +40,16 @@ const roadmapCategories = [
             "Export to PDF, Word, and LaTeX (.tex)",
             "Version history, rollback, and commenting",
             "AI writing assistant: sentence completions, grammar, research-aware suggestions"
+        ]
+    },
+    {
+        icon: <Wrench size={20} />,
+        title: "Planned Improvements",
+        features: [
+            "Composr module UI/UX enhancements for mobile.",
+            "Supabase integration using the new wrapper libraries.",
+            "Expand unified search to more sources.",
+            "Enhanced mobile navigation and responsive layouts."
         ]
     }
 ];

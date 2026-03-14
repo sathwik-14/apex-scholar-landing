@@ -1,4 +1,4 @@
-import { BookOpen, Network, Briefcase, Quote, LayoutDashboard, Lock } from 'lucide-react';
+import { BookOpen, Network, Briefcase, Quote, LayoutDashboard, Lock, Import } from 'lucide-react';
 
 const features = [
     {
@@ -30,6 +30,11 @@ const features = [
         icon: <Lock size={24} />,
         title: "End-to-End Encryption",
         description: "Zero-knowledge security: your research data is encrypted client-side before storage. Only you hold the keys."
+    },
+    {
+        icon: <Import size={24} />,
+        title: "Zotero Integration",
+        description: "Connect your Zotero library to import references seamlessly. Manage connection in Settings > Integrations and import directly into your Resource Library."
     }
 ];
 
