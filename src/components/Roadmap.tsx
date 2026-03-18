@@ -1,4 +1,6 @@
 import { ArrowRight, BookMarked, BrainCircuit, Users, Wrench } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { containerVariants, itemVariants } from '../animations';
 
 const roadmapCategories = [
     {
@@ -46,16 +48,23 @@ const roadmapCategories = [
 
 export default function Roadmap() {
     return (
-        <section className="section roadmap" id="roadmap">
+        <motion.section
+            className="section roadmap"
+            id="roadmap"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={containerVariants}
+        >
             <div className="container">
-                <div className="section-header">
-                    <h2 className="section-title">Roadmap</h2>
-                    <p className="section-subtitle">We are constantly growing to meet the needs of the academic community.</p>
-                </div>
+                <motion.div variants={containerVariants} className="section-header">
+                    <motion.h2 variants={itemVariants} className="section-title">Roadmap</motion.h2>
+                    <motion.p variants={itemVariants} className="section-subtitle">We are constantly growing to meet the needs of the academic community.</motion.p>
+                </motion.div>
 
-                <div className="roadmap-grid">
+                <motion.div variants={containerVariants} className="roadmap-grid">
                     {roadmapCategories.map((category, idx) => (
-                        <div className="card-dark roadmap-card" key={idx}>
+                        <motion.div variants={itemVariants} className="card-dark roadmap-card" key={idx}>
                             <div className="roadmap-card-header">
                                 {category.icon}
                                 <p className="roadmap-title">{category.title}</p>
@@ -68,10 +77,10 @@ export default function Roadmap() {
                                     </li>
                                 ))}
                             </ul>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
-        </section>
+        </motion.section>
     );
 }

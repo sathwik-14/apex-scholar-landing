@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { containerVariants, itemVariants } from '../animations';
 
 const faqs = [
   {
@@ -40,16 +42,23 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="faq-section" id="faq">
+    <motion.section
+      className="faq-section"
+      id="faq"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+      variants={containerVariants}
+    >
       <div className="container">
-        <div className="section-header">
-          <h2 className="section-title">Frequently Asked Questions</h2>
-          <p className="section-desc">Quick answers to common questions about Apex Scholar.</p>
-        </div>
+        <motion.div variants={containerVariants} className="section-header">
+          <motion.h2 variants={itemVariants} className="section-title">Frequently Asked Questions</motion.h2>
+          <motion.p variants={itemVariants} className="section-desc">Quick answers to common questions about Apex Scholar.</motion.p>
+        </motion.div>
 
-        <div className="faq-list">
+        <motion.div variants={containerVariants} className="faq-list">
           {faqs.map((item, idx) => (
-            <div key={idx} className="faq-item">
+            <motion.div variants={itemVariants} key={idx} className="faq-item">
               <button
                 className="faq-question"
                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
@@ -63,14 +72,14 @@ export default function FAQ() {
                   <p>{item.a}</p>
                 </div>
               )}
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="faq-cta">
+        <motion.div variants={itemVariants} className="faq-cta">
           <p>Still have questions? Check our <a href="https://apexscholar-docs.pages.dev" target="_blank" rel="noopener noreferrer">full documentation</a> or <a href="https://github.com/scholarkit/apexscholar/issues" target="_blank" rel="noopener noreferrer">open an issue</a>.</p>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }

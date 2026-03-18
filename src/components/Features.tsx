@@ -1,4 +1,6 @@
 import { BookOpen, Network, Briefcase, Quote, LayoutDashboard, Lock, Import } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { containerVariants, itemVariants } from '../animations';
 
 const features = [
     {
@@ -40,25 +42,32 @@ const features = [
 
 export default function Features() {
     return (
-        <section className="section features" id="features">
+        <motion.section
+            className="section features"
+            id="features"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={containerVariants}
+        >
             <div className="container">
-                <div className="section-header">
-                    <h2 className="section-title">Key Features</h2>
-                    <p className="section-subtitle">A highly customizable environment to discover literature and manage workflow.</p>
-                </div>
+                <motion.div variants={containerVariants} className="section-header">
+                    <motion.h2 variants={itemVariants} className="section-title">Key Features</motion.h2>
+                    <motion.p variants={itemVariants} className="section-subtitle">A highly customizable environment to discover literature and manage workflow.</motion.p>
+                </motion.div>
 
-                <div className="features-grid">
+                <motion.div variants={containerVariants} className="features-grid">
                     {features.map((feature, idx) => (
-                        <div className="card-dark feature-card" key={idx}>
+                        <motion.div variants={itemVariants} className="card-dark feature-card" key={idx}>
                             <div className="feature-icon">
                                 {feature.icon}
                             </div>
                             <h3 className="feature-title">{feature.title}</h3>
                             <p className="feature-desc">{feature.description}</p>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
-        </section>
+        </motion.section>
     );
 }

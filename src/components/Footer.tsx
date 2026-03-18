@@ -1,11 +1,19 @@
 import { Github, Heart } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { itemVariants } from '../animations';
 
 export default function Footer() {
     return (
-        <footer className="footer">
+        <motion.footer
+            className="footer"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={itemVariants}
+        >
             <div className="container footer-content">
-                <div className="footer-top">
-                    <div className="footer-brand">
+                <motion.div variants={itemVariants} className="footer-top">
+                    <motion.div variants={itemVariants} className="footer-brand">
                         <h3>Apex Scholar</h3>
                         <p className="footer-desc">A unified, AI-powered workspace for academic researchers.</p>
                         <div className="footer-socials">
@@ -13,8 +21,8 @@ export default function Footer() {
                                 <Github size={20} />
                             </a>
                         </div>
-                    </div>
-                    <div className="footer-links">
+                    </motion.div>
+                    <motion.div variants={itemVariants} className="footer-links">
                         <div className="link-col">
                             <h4>Product</h4>
                             <a href="#features">Features</a>
@@ -30,13 +38,13 @@ export default function Footer() {
                             <a href="https://buymeacoffee.com/kywagle" target="_blank" rel="noopener noreferrer">Buy Me a Coffee</a>
                             <a href="https://github.com/scholarkit/apexscholar" target="_blank" rel="noopener noreferrer">Contribute</a>
                         </div>
-                    </div>
-                </div>
-                <div className="footer-bottom">
+                    </motion.div>
+                </motion.div>
+                <motion.div variants={itemVariants} className="footer-bottom">
                     <p>Built with <Heart size={14} className="inline-icon" style={{ color: '#ef4444', verticalAlign: 'middle' }} /> for the research community.</p>
                     <p className="license-text">This project is open-source. Released under the MIT License.</p>
-                </div>
+                </motion.div>
             </div>
-        </footer>
+        </motion.footer>
     );
 }

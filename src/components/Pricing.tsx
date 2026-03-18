@@ -1,4 +1,6 @@
 import { Check, Zap, Users, Github } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { containerVariants, itemVariants } from '../animations';
 
 const tiers = [
     {
@@ -61,18 +63,25 @@ const tiers = [
 
 export default function Pricing() {
     return (
-        <section className="section pricing" id="pricing">
+        <motion.section
+            className="section pricing"
+            id="pricing"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={containerVariants}
+        >
             <div className="container">
-                <div className="section-header">
-                    <h2 className="section-title">Simple, Transparent Pricing</h2>
-                    <p className="section-subtitle">
+                <motion.div variants={containerVariants} className="section-header">
+                    <motion.h2 variants={itemVariants} className="section-title">Simple, Transparent Pricing</motion.h2>
+                    <motion.p variants={itemVariants} className="section-subtitle">
                         Choose the plan that fits your research workflow. Start free, upgrade as you grow.
-                    </p>
-                </div>
+                    </motion.p>
+                </motion.div>
 
-                <div className="pricing-grid">
+                <motion.div variants={containerVariants} className="pricing-grid">
                     {tiers.map((tier, idx) => (
-                        <div className={`card-dark pricing-card ${tier.popular ? 'popular' : ''}`} key={idx}>
+                        <motion.div variants={itemVariants} className={`card-dark pricing-card ${tier.popular ? 'popular' : ''}`} key={idx}>
                             {tier.popular && <span className="popular-badge">Most Popular</span>}
                             <div className="pricing-header">
                                 <div className="pricing-icon">{tier.icon}</div>
@@ -96,14 +105,14 @@ export default function Pricing() {
                             <button className={`btn btn-${tier.ctaVariant} pricing-cta`}>
                                 {tier.cta}
                             </button>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
 
-                <p className="pricing-note">
+                <motion.p variants={itemVariants} className="pricing-note">
                     All plans include end-to-end encryption. Need something different? <a href="mailto:contact@apexscholar.com">Let's talk</a>.
-                </p>
+                </motion.p>
             </div>
-        </section>
+        </motion.section>
     );
 }
